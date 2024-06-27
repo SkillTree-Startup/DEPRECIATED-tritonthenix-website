@@ -33,4 +33,4 @@ jobs:
 
     - name: Clean up
       run: |
-        rm -rf ./build
+        Remove-Item -Path ./build -Recurse -Force
