@@ -1,3 +1,12 @@
+# TritonThenix
+TritonThenix Website
+
+## Things do add by the end of Spring Break
+1. Home page with instagram uploads
+2. Officers page
+3. Bingo card page
+4. Family Tab
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
