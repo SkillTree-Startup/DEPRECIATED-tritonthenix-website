@@ -1,4 +1,4 @@
-name: Deploy to ACSWeb
+name: Deploy to ACSWeb using GitHub Actions
 
 on:
   push:
@@ -8,13 +8,13 @@ on:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: self-hosted  # Specify self-hosted here
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Setup Node.js
+    - name: Setup Node.js and build React app
       uses: actions/setup-node@v2
       with:
         node-version: '14'
@@ -25,9 +25,12 @@ jobs:
     - name: Build React app
       run: npm run build
 
-    - name: Deploy to ACSWeb
-      env:
-        ACSWEB_USERNAME: tritonthenix
-        ACSWEB_PASSWORD: ${{ secrets.ACSWEB_PASSWORD }}
+    - name: Deploy using SCP with password
       run: |
-        robocopy ./build/ \\acsweb.ucsd.edu\tritonthenix\public_html /mir /z /xf *.txt
+        scp -r ./build/* tritonthenix@acsweb.ucsd.edu:public_html/
+      env:
+        SSH_PASS: ${{ secrets.ACSWEB_PASSWORD }}
+
+    - name: Clean up
+      run: |
+        rm -rf ./build
