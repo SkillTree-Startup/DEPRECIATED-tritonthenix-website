@@ -12,10 +12,10 @@ jobs:
 
     steps:
     # Checkout the repository
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     
     # Setup node (used to download the React app's dependencies and to build the app)
-    - uses: actions/setup-node@v1.1.0
+    - uses: actions/setup-node@v2
       with:
         node-version: '14'
     
@@ -28,6 +28,6 @@ jobs:
     # Deploy the compiled result to the ACSWeb account
     - uses: asg017/actions/acsweb@master
       with:
-        username: tritonthenix
+        username: <your-acsweb-username>
         password: ${{ secrets.ACSWEB_PASSWORD }}
         local_dir: "./build/"
