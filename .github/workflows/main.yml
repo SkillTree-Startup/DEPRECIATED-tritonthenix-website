@@ -30,4 +30,4 @@ jobs:
         ACSWEB_USERNAME: tritonthenix
         ACSWEB_PASSWORD: ${{ secrets.ACSWEB_PASSWORD }}
       run: |
-        rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./build/ tritonthenix@acsweb.ucsd.edu:public_html/
+        robocopy ./build/ \\acsweb.ucsd.edu\tritonthenix\public_html /mir /z /xf *.txt
