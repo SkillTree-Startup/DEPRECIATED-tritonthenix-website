@@ -28,6 +28,6 @@ jobs:
     # Deploy the compiled result to the ACSWeb account
     - uses: asg017/actions/acsweb@master
       with:
-        username: <your-acsweb-username>
+        username: tritonthenix
         password: ${{ secrets.ACSWEB_PASSWORD }}
         local_dir: "./build/"
