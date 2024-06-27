@@ -3,7 +3,7 @@ name: Deploy to ACSWeb
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -11,26 +11,23 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    # Checkout the repository
-    - uses: actions/checkout@v2
-    
-    # Setup node (used to download the React app's dependencies and to build the app)
-    - uses: actions/setup-node@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
       with:
         node-version: '14'
-    
-    # Install the React app's dependencies
-    - run: npm install
-    
-    # Build the React app itself
-    - run: npm run build
-    
-    # Deploy the compiled result to the ACSWeb account
-    - uses: asg017/actions/acsweb@master
-      with:
-        username: tritonthenix
-        password: ${{ secrets.ACSWEB_PASSWORD }}
-        local_dir: "./build/"
 
-#Test Runner
-#Test 2
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build React app
+      run: npm run build
+
+    - name: Deploy to ACSWeb
+      env:
+        ACSWEB_USERNAME: tritonthenix
+        ACSWEB_PASSWORD: ${{ secrets.ACSWEB_PASSWORD }}
+      run: |
+        rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./build/ tritonthenix@acsweb.ucsd.edu:public_html/
