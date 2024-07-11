@@ -1,0 +1,15 @@
+.WorkoutSchedule {
+    padding: 50px;
+    background: #f8f8f8;
+  }
+  
+  .WorkoutSchedule h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .WorkoutSchedule .workout-cards {
+    display: flex;
+    justify-content: space-around;
+  }
+  

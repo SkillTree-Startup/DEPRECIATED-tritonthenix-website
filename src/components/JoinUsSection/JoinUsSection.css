@@ -1,0 +1,18 @@
+.JoinUsSection {
+    padding: 50px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  .JoinUsSection h2 {
+    margin-bottom: 20px;
+  }
+  
+  .JoinUsSection p {
+    margin-bottom: 20px;
+  }
+  
+  .JoinUsSection button {
+    padding: 10px 20px;
+  }
+  

@@ -1,0 +1,15 @@
+.MemberSection {
+    padding: 50px;
+    background: #f0f0f0;
+  }
+  
+  .MemberSection h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .MemberSection .member-cards {
+    display: flex;
+    justify-content: space-around;
+  }
+  
