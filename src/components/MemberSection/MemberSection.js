@@ -7,9 +7,24 @@ function MemberSection() {
     <section className="MemberSection">
       <h2>Our Members</h2>
       <div className="member-cards">
-        <MemberCard />
-        <MemberCard />
-        <MemberCard />
+      <MemberCard
+        imageUrl="https://via.placeholder.com/80"
+        userName="User Name"
+        familyName="Family Name"
+        percentage={43}
+      />
+        <MemberCard
+        imageUrl="https://via.placeholder.com/80"
+        userName="User Name"
+        familyName="Family Name"
+        percentage={43}
+      />
+        <MemberCard
+        imageUrl="https://via.placeholder.com/80"
+        userName="User Name"
+        familyName="Family Name"
+        percentage={43}
+      />
       </div>
     </section>
   );

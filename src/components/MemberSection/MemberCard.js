@@ -1,13 +1,17 @@
 import React from 'react';
 import './MemberCard.css';
 
-function MemberCard() {
+function MemberCard({ imageUrl, userName, familyName, percentage }) {
   return (
     <div className="MemberCard">
-      <img src="member-placeholder.png" alt="Member" />
-      <h3>User Name</h3>
-      <p>Hear members share their experiences.</p>
-      <progress value="45" max="100">45%</progress>
+      <img src={imageUrl} alt="Member" className="MemberImage" />
+      <div className="MemberTextContainer">
+        <h3 className="MemberUserName">{userName}</h3>
+        <p className="MemberFamilyName">{familyName}</p>
+      </div>
+      <div className="ProgressBarContainer">
+        <div className="ProgressBar" style={{ width: `${percentage}%` }}></div>
+      </div>
     </div>
   );
 }

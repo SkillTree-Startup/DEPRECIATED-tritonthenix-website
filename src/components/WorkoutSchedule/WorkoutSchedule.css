@@ -1,15 +1,32 @@
 .WorkoutSchedule {
-    padding: 50px;
-    background: #f8f8f8;
-  }
-  
-  .WorkoutSchedule h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
+  padding: 20px;
+}
+
+.WorkoutSchedule h2 {
+  text-align: left;
+}
+
+.WorkoutSchedule .workout-cards {
+  display: flex;
+  justify-content: space-around; /* Adjusted spacing */
+  flex-wrap: wrap; /* Allow cards to wrap onto new lines */
+  gap: 20px; /* Add some gap between cards */
+}
+
+@media (max-width: 768px) {
   .WorkoutSchedule .workout-cards {
-    display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center cards on smaller screens */
   }
-  
+
+  .WorkoutSchedule .workout-card {
+    flex: 1 0 calc(50% - 20px); /* Two cards per row with gap */
+    max-width: calc(50% - 20px); /* Maximum width for two cards per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .WorkoutSchedule .workout-card {
+    flex: 1 0 100%; /* One card per row on smaller screens */
+    max-width: 100%; /* Full width for one card per row */
+  }
+}
