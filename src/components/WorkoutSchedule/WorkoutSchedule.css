@@ -12,7 +12,6 @@
   display: flex;
   justify-content:space-evenly ; /* Adjusted spacing */
   flex-wrap: wrap; /* Allow cards to wrap onto new lines */
-  flex-flow: row wrap-reverse;
   gap: 20px; /* Add some gap between cards */
 }
 

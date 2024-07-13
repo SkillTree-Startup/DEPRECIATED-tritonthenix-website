@@ -48,10 +48,6 @@
   word-break: break-word; /* Break long words */
 }
 
-.eventName.light {
-  color: white;
-}
-
 .eventDetails {
   position: absolute;
   bottom: 0;
