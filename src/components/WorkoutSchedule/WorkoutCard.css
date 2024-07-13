@@ -5,12 +5,11 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: border 0.3s, transform 0.3s; /* Add transform transition */
+  transition: transform 0.3s;
 }
 
 .WorkoutCard:hover {
   transform: scale(0.98); /* Scale down on hover */
-  border: 1px solid #313131; /* Border color on hover */
 }
 
 .workoutImageButton {
@@ -27,6 +26,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.dark .workoutImage {
+  opacity: 0.7; /* Add dark overlay */
 }
 
 .eventName {
@@ -42,6 +46,10 @@
   width: 98%; /* Adjust as necessary to fit within card's padding */
   white-space: normal; /* Allow wrapping */
   word-break: break-word; /* Break long words */
+}
+
+.eventName.light {
+  color: white;
 }
 
 .eventDetails {
@@ -140,6 +148,10 @@
   .WorkoutCard {
     width: 200px; /* Shrink width on smaller screens */
   }
+
+  .eventName {
+    top: 56%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -170,11 +182,9 @@
     box-sizing: border-box;
   }
 
-.likeButton svg,
-.dislikeButton svg {
-  width: 25px;
-  height: 25px;
-}
-
-
+  .likeButton svg,
+  .dislikeButton svg {
+    width: 25px;
+    height: 25px;
+  }
 }

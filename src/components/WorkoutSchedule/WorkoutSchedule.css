@@ -3,13 +3,16 @@
 }
 
 .WorkoutSchedule h2 {
-  text-align: left;
+  text-align: center;
+  font-size: 250%;
+  font-weight: lighter;
 }
 
 .WorkoutSchedule .workout-cards {
   display: flex;
-  justify-content: space-around; /* Adjusted spacing */
+  justify-content:space-evenly ; /* Adjusted spacing */
   flex-wrap: wrap; /* Allow cards to wrap onto new lines */
+  flex-flow: row wrap-reverse;
   gap: 20px; /* Add some gap between cards */
 }
 

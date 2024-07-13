@@ -47,26 +47,61 @@ const BackgroundTiles = () => {
   }, []);
 
   useEffect(() => {
-    // Shuffle icons array to randomize order
-    const shuffledIcons = [...svgFiles].sort(() => Math.random() - 0.5);
+    const createShuffledTiles = () => {
+      const totalIcons = numRows * numCols;
+      const iconCount = svgFiles.length;
+      const fullSets = Math.ceil(totalIcons / iconCount);
+      const shuffledIcons = [];
 
-    // Generate tiles for background
-    const newTiles = [];
-    for (let row = 0; row < numRows; row++) {
-      const rowIcons = [];
-      for (let col = 0; col < numCols; col++) {
-        const index = Math.floor(Math.random() * svgFiles.length);
-        rowIcons.push(
-          <div key={`${row}-${col}`} className="tile" style={{ left: col * 30, top: row * 30 }}>
-            <img src={shuffledIcons[index]} alt={`icon-${index}`} className="icon" />
-          </div>
-        );
+      // Generate the required number of full sets
+      for (let i = 0; i < fullSets; i++) {
+        const set = [...svgFiles].sort(() => Math.random() - 0.5);
+        shuffledIcons.push(...set);
       }
-      newTiles.push(rowIcons);
-    }
 
-    setTiles(newTiles);
-  }, [numRows, numCols]); // Update tiles whenever numRows or numCols change
+      const newTiles = Array(numRows).fill(null).map(() => Array(numCols).fill(null));
+      const isValidPosition = (row, col, icon) => {
+        const directions = [
+          [-1, 0], [1, 0], [0, -1], [0, 1]
+        ];
+
+        return directions.every(([dRow, dCol]) => {
+          const newRow = row + dRow;
+          const newCol = col + dCol;
+          return (
+            newRow < 0 ||
+            newRow >= numRows ||
+            newCol < 0 ||
+            newCol >= numCols ||
+            newTiles[newRow][newCol] !== icon
+          );
+        });
+      };
+
+      for (let row = 0; row < numRows; row++) {
+        for (let col = 0; col < numCols; col++) {
+          let index;
+          do {
+            index = Math.floor(Math.random() * iconCount) + (Math.floor((row * numCols + col) / iconCount) * iconCount);
+          } while (!isValidPosition(row, col, shuffledIcons[index % shuffledIcons.length]));
+
+          newTiles[row][col] = shuffledIcons[index % shuffledIcons.length];
+        }
+      }
+
+      const tilesToRender = newTiles.map((row, rowIndex) =>
+        row.map((icon, colIndex) => (
+          <div key={`${rowIndex}-${colIndex}`} className="tile" style={{ left: colIndex * 30, top: rowIndex * 30 }}>
+            <img src={icon} alt={`icon-${icon}`} className="icon" />
+          </div>
+        ))
+      );
+
+      setTiles(tilesToRender);
+    };
+
+    createShuffledTiles();
+  }, [numRows, numCols]);
 
   return (
     <div className="background-tiles">

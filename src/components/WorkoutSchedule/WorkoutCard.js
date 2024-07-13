@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './WorkoutCard.css';
 
-const WorkoutCard = ({ imageUrl, eventName, time, date, location }) => {
+const WorkoutCard = ({ imageUrl, eventName, time, date, location, theme }) => {
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
@@ -29,7 +29,7 @@ const WorkoutCard = ({ imageUrl, eventName, time, date, location }) => {
       </button>
       <button className="workoutImageButton">
         <img src={imageUrl} alt="Workout" className="workoutImage" />
-        <h3 className="eventName">{eventName}</h3>
+        <h3 className={`eventName ${theme}`}>{eventName}</h3>
         <div className="eventDetails">
           <div className="details">
             <div className="info">

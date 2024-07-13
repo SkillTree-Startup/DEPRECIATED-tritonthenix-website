@@ -8,36 +8,54 @@ function WorkoutSchedule() {
       <h2>Workout Schedule</h2>
       <div className="workout-cards">
       <WorkoutCard
-        eventName="Triton Fitness Summit"
+        eventName="DragonFire Workout"
         description="This is an example workout description."
         imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         time="5pm-7pm"
-        date="July, 15th"
+        date="Mon, Wed, Fri"
         location="Muir Fit Park"
       />
       <WorkoutCard
-        eventName="Battle Ropes"
+        eventName="King Family Workout"
         description="This is an example workout description."
         imageUrl="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        time="5pm-7pm"
-        date="July, 15th"
+        time="2pm-3pm"
+        date="Tues, Thurs"
         location="Muir Fit Park"
       />
       <WorkoutCard
-        eventName="accessorize your workout"
+        eventName="Jack's Family Workout"
         description="This is an example workout description."
         imageUrl="https://images.pexels.com/photos/3927387/pexels-photo-3927387.jpeg"
-        time="5pm-7pm"
-        date="July, 15th"
+        time="1pm-4pm"
+        date="Mon, Tues, Fri"
         location="Muir Fit Park"
+        theme="dark"
       />
       <WorkoutCard
-        eventName="Yoga with the girls"
+        eventName="Gabe's Family Workout"
         description="This is an example workout description."
         imageUrl="https://images.pexels.com/photos/866023/pexels-photo-866023.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         time="5pm-7pm"
-        date="July, 15th"
+        date="Sun, Wed, Thurs"
         location="Muir Fit Park"
+        theme="dark"
+      />
+      <WorkoutCard
+        eventName="Sophia's Family Workout"
+        description="This is an example workout description."
+        imageUrl="https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        time="5pm-7pm"
+        date="Mon, Wed, Fri"
+        location="Muir Fit Park"
+      />
+      <WorkoutCard
+        eventName="Saturday Workout"
+        description="This is an example workout description."
+        imageUrl="https://images.pexels.com/photos/3943939/pexels-photo-3943939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        time="5pm-7pm"
+        date="Saturday"
+        location="Muir Bar Park"
       />
       </div>
     </section>
