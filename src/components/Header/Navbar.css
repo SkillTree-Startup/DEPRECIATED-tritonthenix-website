@@ -1,24 +1,96 @@
 .Navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #444;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.logo-img {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer; /* Ensures cursor changes on hover */
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.menu-icon {
+  display: none; /* Hide by default for larger screens */
+  cursor: pointer;
+}
+
+.menu-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.menu-icon.hide-icon svg {
+  transform: rotate(90deg);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-links li {
+  font-size: 1em;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f0f0f0;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show hamburger menu icon for small screens */
   }
-  
-  .Navbar .logo {
-    font-size: 1.5em;
-    color: #fff;
+
+  .nav-links {
+    font-size: 20px;
+    display: none; /* Hide links by default on small screens */
+    flex-direction: column;
+    position: fixed; /* Fixed position to stay visible while scrolling */
+    top: 35px; /* Adjust top position as needed */
+    right: 20px; /* Position on the right side of the screen */
+    z-index: 1;
   }
-  
-  .Navbar .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+
+  .nav-links.show {
+    display: flex; /* Show links when hamburger is clicked */
   }
-  
-  .Navbar .nav-links a {
-    color: #fff;
-    text-decoration: none;
+
+  .nav-links li {
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
   }
-  
+
+  .nav-links a {
+    padding: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .nav-links a:hover {
+    background-color: rgba(188, 188, 188, 0.5);
+    border-radius: 10px;
+  }
+
+  .menu-icon:hover svg {
+    transform: rotate(90deg); /* Apply rotation on hover */
+  }
+}
