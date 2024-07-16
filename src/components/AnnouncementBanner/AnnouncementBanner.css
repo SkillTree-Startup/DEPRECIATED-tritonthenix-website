@@ -1,0 +1,34 @@
+.announcement-banner {
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  z-index: 1000;
+  font-weight: 900;
+}
+
+.announcement-text-wrapper {
+  display: flex;
+}
+
+.announcement-text {
+  display: inline-block;
+  padding-right: 100%;
+  animation: none;
+}
+
+.announcement-text.scrolling {
+  animation: scroll 50s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

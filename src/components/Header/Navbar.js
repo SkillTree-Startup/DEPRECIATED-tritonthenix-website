@@ -5,20 +5,23 @@ import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
+  const [navbarVisible, setNavbarVisible] = useState(true);
   const navRef = useRef(null);
 
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setShowLinks(false); // Close menu when clicking outside
+    function handleScroll() {
+      const isScrolled = window.scrollY > 50; // Adjust as needed
+      setNavbarVisible(!isScrolled);
+      if (showLinks && isScrolled) {
+        setShowLinks(false);
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('scroll', handleScroll);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [showLinks]);
 
   const toggleLinks = () => {
     setShowLinks(!showLinks);
@@ -30,11 +33,11 @@ function Navbar() {
   };
 
   return (
-    <nav className="Navbar">
+    <nav className={`Navbar ${navbarVisible ? 'visible' : 'hidden'}`}>
       <div className="logo">
         <img src={Logo} alt="Logo" className="logo-img" onClick={scrollToTop} />
       </div>
-      <div className="menu-icon" onClick={toggleLinks}>
+      <div className="menu-icon" onClick={() => setShowLinks(!showLinks)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
@@ -54,57 +57,27 @@ function Navbar() {
       </div>
       <ul ref={navRef} className={showLinks ? 'nav-links show' : 'nav-links'}>
         <li>
-          <ScrollLink
-            activeClass="active"
-            to="home"
-            spy={true}
-            smooth={true}
-            onClick={scrollToTop}
-          >
+          <ScrollLink activeClass="active" to="home" spy={true} smooth={true} onClick={scrollToTop}>
             Home
           </ScrollLink>
         </li>
         <li>
-          <ScrollLink
-            activeClass="active"
-            to="events"
-            spy={true}
-            smooth={true}
-            onClick={scrollToTop}
-          >
+          <ScrollLink activeClass="active" to="events" spy={true} smooth={true} onClick={scrollToTop}>
             Events
           </ScrollLink>
         </li>
         <li>
-          <ScrollLink
-            activeClass="active"
-            to="families"
-            spy={true}
-            smooth={true}
-            onClick={scrollToTop}
-          >
+          <ScrollLink activeClass="active" to="families" spy={true} smooth={true} onClick={scrollToTop}>
             Families
           </ScrollLink>
         </li>
         <li>
-          <ScrollLink
-            activeClass="active"
-            to="about"
-            spy={true}
-            smooth={true}
-            onClick={scrollToTop}
-          >
+          <ScrollLink activeClass="active" to="about" spy={true} smooth={true} onClick={scrollToTop}>
             About
           </ScrollLink>
         </li>
         <li>
-          <ScrollLink
-            activeClass="active"
-            to="contact"
-            spy={true}
-            smooth={true}
-            onClick={scrollToTop}
-          >
+          <ScrollLink activeClass="active" to="contact" spy={true} smooth={true} onClick={scrollToTop}>
             Contact
           </ScrollLink>
         </li>
