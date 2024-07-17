@@ -1,0 +1,88 @@
+.workoutSchedule {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    margin: 36px 0;
+    padding: 36px;
+  }
+  
+  .workoutTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 36px;
+  }
+  
+  .workoutImage {   
+    flex: 1;
+    max-width: 48.7%; /* Adjust this percentage as needed */
+    border-radius: 12px;
+  }
+  
+  .scheduleContent {
+    flex: 2;
+  }
+  
+  .scheduleTitle {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .scheduleDescription {
+    font-size: 16px;
+  }
+  
+  .imageGallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .galleryImage {
+    width: 23%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 991px) {
+    .workoutTop {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  
+    .workoutImage {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .imageGallery {
+      flex-wrap: wrap;
+    }
+  
+    .galleryImage {
+      width: 48%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .imageGallery {
+      flex-direction: column;
+    }
+
+    .workoutImage {
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+  
+    .galleryImage {
+      width: 100%;
+    }
+  }
+  

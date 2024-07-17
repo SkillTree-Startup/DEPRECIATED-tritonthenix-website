@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import AppTest from './App.test'
+import Home from './pages/Home'
 import reportWebVitals from './reportWebVitals';
-import BackgroundTiles from './components/BackgroundTiles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppTest />
+    <Home />
   </React.StrictMode>
 );
 
