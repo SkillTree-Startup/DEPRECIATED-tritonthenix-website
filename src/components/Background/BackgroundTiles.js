@@ -4,17 +4,17 @@ import './BackgroundTiles.css'; // Import your CSS for styling
 const BackgroundTiles = () => {
   // Replace these with your actual SVG imports
   const svgFiles = [
-    require('../assets/svg/Dips.svg').default,
-    require('../assets/svg/Flag.svg').default,
-    require('../assets/svg/Handstand.svg').default,
-    require('../assets/svg/IronCross.svg').default,
-    require('../assets/svg/JumpRope.svg').default,
-    require('../assets/svg/LSitHang.svg').default,
-    require('../assets/svg/Planche.svg').default,
-    require('../assets/svg/PullUp.svg').default,
-    require('../assets/svg/PushUp.svg').default,
-    require('../assets/svg/Squat.svg').default,
-    require('../assets/svg/VSit.svg').default,
+    require('../../assets/svg/Dips.svg').default,
+    require('../../assets/svg/Flag.svg').default,
+    require('../../assets/svg/Handstand.svg').default,
+    require('../../assets/svg/IronCross.svg').default,
+    require('../../assets/svg/JumpRope.svg').default,
+    require('../../assets/svg/LSitHang.svg').default,
+    require('../../assets/svg/Planche.svg').default,
+    require('../../assets/svg/PullUp.svg').default,
+    require('../../assets/svg/PushUp.svg').default,
+    require('../../assets/svg/Squat.svg').default,
+    require('../../assets/svg/VSit.svg').default,
     // Add all your SVG imports here
   ];
 
