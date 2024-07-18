@@ -17,7 +17,7 @@ const Home = () => (
     <JoinTeam 
         title="JOIN OUR TEAM"
         description="We’d love to hear from you! Whether you’re looking for a full-time role, an internship, or volunteer opportunities, we have a place for you!"
-        buttonText="Learn More"
+        buttonText="Contact Us"
     />
     <WorkoutSchedule />
     <MemberList />

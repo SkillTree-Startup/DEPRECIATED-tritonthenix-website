@@ -64,6 +64,6 @@
   
   @media (max-width: 640px) {
     .joinDescription {
-        display: none;
+        /* display: none; */
     }
   }

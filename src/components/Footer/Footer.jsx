@@ -22,7 +22,7 @@ const Footer = () => (
         <div className={styles.socialIcons}>
           <a href="#" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
           <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/tritonthenix/" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
