@@ -16,34 +16,42 @@
     object-fit: cover;
     z-index: -1;
   }
+
+  .filter{
+    background-color: rgb(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+  }
   
   .heroContent {
     position: absolute;
-    bottom: 50px;
     text-align: center;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: add a semi-transparent background */
     padding: 20px;
     border-radius: 10px;
   }
   
-  .heroTitle {
-    font-size: 48px;
-    margin-bottom: 20px;
+  .logo {
+    width: 90%;
   }
   
   .heroBody {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 30px;
+    color: #ddd;
   }
   
   .heroButton {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #000;
-    color: #fff;
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 25px;
+    max-width: 25%;
+    text-align: center;
   }
   
   @media (max-width: 991px) {

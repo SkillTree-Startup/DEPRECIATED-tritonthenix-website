@@ -11,7 +11,7 @@ const Home = () => (
     <Hero
       title="TRITONTHENIX"
       body="Self Improvement through fitness and bodyweight training"
-      buttonText="Join"
+      buttonText="JOIN"
       image="https://cdn.builder.io/api/v1/image/assets%2Fa8b7168136f64220b5633a354f9263d0%2Fa99c5659c5ad4b898005f32e7fb12de7"
     />
     <JoinTeam 
