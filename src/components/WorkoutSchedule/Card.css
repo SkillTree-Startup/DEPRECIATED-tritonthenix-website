@@ -1,86 +1,140 @@
-.card {
-    width: 100%;
-    aspect-ratio: 1;
-    border: 1px solid black;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 150ms ease-in, box-shadow 0.2s linear;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 10px 10px 28px -2px rgba(0, 0, 0, 0.75);
-  }
-  
-  .card__overlay {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 15px 15px 0 0;
-    padding: 10px;
-    flex-grow: 1;
-  }
-  
-  .card__body {
-    text-align: center;
-    padding-bottom: 20px; /* Adjust padding to show a bit of the image */
-  }
-  
-  .card__body span {
-    color: rgb(248, 51, 84);
-    font-weight: 600;
-  }
-  
-  .card__body h1 {
-  }
-  
-  .card__body p {
-    color: gray;
-  }
-  
-  .card__footer {
-    border-radius: 0 0 15px 15px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .card__Footer__first,
-  .card__Footer__second,
-  .card__Footer__third {
-    text-align: center;
-  }
-  
-  .card__Footer__first div p,
-  .card__Footer__second div p,
-  .card__Footer__third div p {
-    font-size: 20px;
-    font-weight: 1000;
-  }
-  
-  .card__Footer__first label,
-  .card__Footer__second label,
-  .card__Footer__third label {
-    font-weight: 200;
-  }
-  
-  @media (max-width: 991px) {
-    .card {
-        max-width: 47%;
-    }
+.workoutCard {
+  position: relative;
+  width: 100%; /* Initial width */
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
 
-    @media (max-width: 640px) {
-        .card {
-            max-width: 100%;
-        }
-    }
-  }
+.workoutCard:hover {
+  /* transform: scale(0.98);  */
+}
+
+.workoutImageButton {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.workoutImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.dark .workoutImage {
+  opacity: 0.7; /* Add dark overlay */
+}
+
+.eventName {
+  text-transform: uppercase;
+  position: absolute;
+  top: 60%; /* Adjust if necessary to prevent overlap with details */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200%; /* Adjust based on your design */
+  color: white;
+  text-align: left;
+  margin: 0;
+  width: 98%; /* Adjust as necessary to fit within card's padding */
+  white-space: normal; /* Allow wrapping */
+  word-break: break-word; /* Break long words */
+}
+
+.eventDetails {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-sizing: border-box;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.smallText {
+  font-size: 0.8em;
+  margin: 2px 0;
+}
+
+.iconContainer {
+  display: flex;
+}
+
+.likeButton,
+.dislikeButton,
+.bookmarkButton {
+  background: none; /* Ensure the button itself has no background */
+  border: none; /* Ensure the button has no border */
+  padding: 0; /* Remove any default padding */
+  cursor: pointer;
+}
+
+.dislikeButton svg {
+  margin-top: 10%;
+}
+
+.likeButton svg,
+.dislikeButton svg,
+.bookmarkButton svg {
+  width: 34%;
+  height: 100%;
+  fill: rgba(255, 255, 255, 0.6);
+  transition: fill 0.1s;
+}
+
+.likeButton:hover svg,
+.dislikeButton:hover svg,
+.bookmarkButton:hover svg {
+  opacity: 0.8; /* Change opacity on hover */
+}
+
+.likeButton.liked svg {
+  fill: #2ecc71; /* Green when liked */
+}
+
+.dislikeButton.disliked svg {
+  fill: #e74c3c; /* Red when disliked */
+}
+
+.bookmarkButton.bookmarked svg {
+  fill: gold; /* Yellow when bookmarked */
+}
+
+/* .bookmarkButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+} */
+
+.main .eventDetails{
+  padding-bottom: 10px;
+}
