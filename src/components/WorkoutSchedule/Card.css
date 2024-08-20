@@ -1,4 +1,4 @@
-.WorkoutCard {
+.workoutCard {
   position: relative;
   width: 100%; /* Initial width */
   height: 100%;
@@ -8,8 +8,8 @@
   transition: transform 0.3s;
 }
 
-.WorkoutCard:hover {
-  /* transform: scale(0.98);  */
+.workoutCard:hover {
+  transform: scale(0.98);
 }
 
 .workoutImageButton {
@@ -134,7 +134,3 @@
   cursor: pointer;
   z-index: 1;
 } */
-
-.main {
-  
-}
