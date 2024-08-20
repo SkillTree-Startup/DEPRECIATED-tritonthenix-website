@@ -13,7 +13,6 @@ const WorkoutSchedule = () => (
           time="5pm-7pm"
           date="Mon, Wed, Fri"
           location="Muir Fit Park"
-          theme={main}
         />
     </div>
       <div className={styles.scheduleContent}>
@@ -43,8 +42,7 @@ const WorkoutSchedule = () => (
           date="Mon, Wed, Fri"
           location="Muir Fit Park"
         />
-      </div>
-      <div className={styles.galleryImage}>
+      </div><div className={styles.galleryImage}>
         <Card
           eventName="DragonFire Workout"
           description="This is an example workout description."
