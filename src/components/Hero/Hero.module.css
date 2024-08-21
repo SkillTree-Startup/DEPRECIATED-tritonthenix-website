@@ -41,18 +41,20 @@
     color: #ddd;
   }
   
-  .heroButton {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 25px;
-    max-width: 25%;
-    text-align: center;
-  }
+.heroButton {
+  flex: 1;
+  padding: 10px 80px; /* Increase padding on the left and right */
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  max-width: 50%; /* Adjust max-width to give more space for the button */
+  text-align: center;
+  margin: 0 auto; /* Center the button horizontally */
+  box-sizing: border-box; /* Ensure padding and width calculations work as expected */
+}
   
   @media (max-width: 991px) {
     .heroContent {

@@ -36,6 +36,7 @@
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 10px;
+    opacity: 0.8;
   }
   
   .memberName {

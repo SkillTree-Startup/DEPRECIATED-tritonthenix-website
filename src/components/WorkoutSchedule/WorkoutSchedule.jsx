@@ -10,9 +10,11 @@ const WorkoutSchedule = () => (
           eventName="DragonFire Workout"
           description="This is an example workout description."
           imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          trainer="Jack"
           time="5pm-7pm"
-          date="Mon, Wed, Fri"
+          days="Mon, Wed, Fri"
           location="Muir Fit Park"
+          theme="main"
         />
     </div>
       <div className={styles.scheduleContent}>
@@ -28,8 +30,9 @@ const WorkoutSchedule = () => (
           eventName="DragonFire Workout"
           description="This is an example workout description."
           imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          trainer="Jack"
           time="5pm-7pm"
-          date="Mon, Wed, Fri"
+          days="Mon, Wed, Fri"
           location="Muir Fit Park"
         />
       </div>
@@ -38,8 +41,9 @@ const WorkoutSchedule = () => (
           eventName="DragonFire Workout"
           description="This is an example workout description."
           imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          trainer="Jack"
           time="5pm-7pm"
-          date="Mon, Wed, Fri"
+          days="Mon, Wed, Fri"
           location="Muir Fit Park"
         />
       </div><div className={styles.galleryImage}>
@@ -47,8 +51,9 @@ const WorkoutSchedule = () => (
           eventName="DragonFire Workout"
           description="This is an example workout description."
           imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          trainer="Jack"
           time="5pm-7pm"
-          date="Mon, Wed, Fri"
+          days="Mon, Wed, Fri"
           location="Muir Fit Park"
         />
       </div>
@@ -57,8 +62,9 @@ const WorkoutSchedule = () => (
           eventName="DragonFire Workout"
           description="This is an example workout description."
           imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          trainer="Jack"
           time="5pm-7pm"
-          date="Mon, Wed, Fri"
+          days="Mon, Wed, Fri"
           location="Muir Fit Park"
         />
       </div>
@@ -67,8 +73,9 @@ const WorkoutSchedule = () => (
           eventName="DragonFire Workout"
           description="This is an example workout description."
           imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          trainer="Jack"
           time="5pm-7pm"
-          date="Mon, Wed, Fri"
+          days="Mon, Wed, Fri"
           location="Muir Fit Park"
         />
       </div>

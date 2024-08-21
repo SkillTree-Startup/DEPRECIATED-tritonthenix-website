@@ -26,26 +26,57 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.3s;
+  opacity: 0.8;
 }
 
-.dark .workoutImage {
-  opacity: 0.7; /* Add dark overlay */
-}
-
-.eventName {
+.eventName,
+.trainer,
+.days,
+.date,
+.time,
+.location {
   text-transform: uppercase;
-  position: absolute;
-  top: 60%; /* Adjust if necessary to prevent overlap with details */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 200%; /* Adjust based on your design */
+  font-size: 250%; /* Adjust based on your design */
   color: white;
-  text-align: left;
-  margin: 0;
-  width: 98%; /* Adjust as necessary to fit within card's padding */
+  position: absolute; /* Position it absolutely within the card */
+  top: 15%; /* Center it vertically */
+  left: 50%; /* Center it horizontally */
+  transform: translate(-50%, -50%); /* Offset the centering */
+  text-align: left; /* Center the text itself */
+  margin: 0; /* Remove any default margins */
+  width: 90%; /* Adjust as necessary to fit within the card's padding */
   white-space: normal; /* Allow wrapping */
   word-break: break-word; /* Break long words */
+  z-index: 2; /* Ensure it appears above the image */
+}
+
+.trainer,
+.days,
+.date,
+.time,
+.location {
+  text-transform: none;
+  font-size: 115%; /* Adjust based on your design */
+  color: #999;
+  top: 45%; /* Center it vertically */
+  font-weight: 100;
+}
+
+.days,
+.date {
+  top: 50%;
+}
+
+.time {
+  top: 55%;
+}
+
+.location {
+  top: 60%;
+}
+
+.event .days {
+  visibility: hidden;
 }
 
 .eventDetails {
@@ -53,15 +84,16 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 25%;
+  height: 35%;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-sizing: border-box;
+  padding-bottom: 20%;
 }
 
 .details {
@@ -85,6 +117,21 @@
   display: flex;
 }
 
+.iconWrapper {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.likeCounter,
+.dislikeCounter,
+.bookmarkCounter {
+  font-size: 1.5rem;
+  color: white;
+  position: relative;
+  bottom: 5%;
+}
+
 .likeButton,
 .dislikeButton,
 .bookmarkButton {
@@ -94,17 +141,14 @@
   cursor: pointer;
 }
 
-.dislikeButton svg {
-  margin-top: 10%;
-}
-
 .likeButton svg,
 .dislikeButton svg,
 .bookmarkButton svg {
-  width: 34%;
+  width: 50%;
   height: 100%;
   fill: rgba(255, 255, 255, 0.6);
   transition: fill 0.1s;
+  margin-top: 10px;
 }
 
 .likeButton:hover svg,
@@ -134,3 +178,22 @@
   cursor: pointer;
   z-index: 1;
 } */
+
+.main svg {
+  margin-top: 10%;
+  width: 30%;
+}
+
+@media (max-width: 991px) {
+  .main 
+  .eventDetails {
+    padding-bottom: 0%;
+  }
+}
+
+@media (max-width: 640px) {
+  .main svg {
+    margin-top: 10%;
+    width: 50%;
+  }
+}
