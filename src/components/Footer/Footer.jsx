@@ -24,7 +24,7 @@ const Footer = () => (
     <div className={styles.footerContent}>
       <div className={styles.footerSection}>
         <h3>About Us</h3>
-        <p>TRITONTHENIX is dedicated to self-improvement through fitness and bodyweight training.</p>
+        <p>Tritonthenix is a social organization that prioritizes self-improvement through bodyweight training. Our program not only fosters confidence through consistent routines and community involvement, but also cultivates mentorship and leadership skills within our diverse and inclusive community. Additionally, our fun and sustainable training approach is accessible to all skill levels, affordable, and can be practiced anytime, anywhere.</p>
       </div>
       <div className={styles.footerSection}>
         <h3>Quick Links</h3>

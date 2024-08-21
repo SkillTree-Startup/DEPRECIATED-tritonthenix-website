@@ -1,86 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './WorkoutSchedule.module.css';
 import Card from './Card';
+import { fetchWorkoutsData } from './WorkoutData'; // Ensure the path is correct
 
-const WorkoutSchedule = () => (
-  <section className={styles.workoutSchedule}>
-    <div className={styles.workoutTop}>
-    <div className={styles.workoutImage}>
-      <Card
-          eventName="DragonFire Workout"
-          description="This is an example workout description."
-          imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          trainer="Jack"
-          time="5pm-7pm"
-          days="Mon, Wed, Fri"
-          location="Muir Fit Park"
-          theme="main"
-        />
-    </div>
-      <div className={styles.scheduleContent}>
-        <h2 className={styles.scheduleTitle}>Workout Schedule</h2>
-        <p className={styles.scheduleDescription}>
-          Description: Here is where we can write a description about how Saturday workouts are formatted and how they are run. We can talk about the purpose of the workouts as well as hype up the head trainer.
-        </p>
+const WorkoutSchedule = () => {
+  const [workouts, setWorkouts] = useState([]);
+
+  useEffect(() => {
+    const loadWorkoutsData = async () => {
+      try {
+        const data = await fetchWorkoutsData();
+        setWorkouts(data);
+      } catch (error) {
+        console.error('Error fetching workouts data:', error);
+      }
+    };
+
+    loadWorkoutsData();
+  }, []);
+
+  return (
+    <section className={styles.workoutSchedule}>
+      <div className={styles.workoutTop}>
+        {workouts.length > 0 && workouts[0] && (
+          <div className={styles.workoutImage}>
+            <Card
+              eventName={workouts[0].eventName}
+              description={workouts[0].description}
+              imageUrl={workouts[0].imageUrl}
+              trainer={workouts[0].trainer}
+              time={workouts[0].time}
+              days={workouts[0].days}
+              location={workouts[0].location}
+              theme={workouts[0].theme}
+            />
+          </div>
+        )}
+        <div className={styles.scheduleContent}>
+          <h2 className={styles.scheduleTitle}>Workout Schedule</h2>
+          <p className={styles.scheduleDescription}>
+            Description: Here is where we can write a description about how Saturday workouts are formatted and how they are run. We can talk about the purpose of the workouts as well as hype up the head trainer.
+          </p>
+        </div>
       </div>
-    </div>
-    <div className={styles.imageGallery}>
-      <div className={styles.galleryImage}>
-        <Card
-          eventName="DragonFire Workout"
-          description="This is an example workout description."
-          imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          trainer="Jack"
-          time="5pm-7pm"
-          days="Mon, Wed, Fri"
-          location="Muir Fit Park"
-        />
+      <div className={styles.imageGallery}>
+        {workouts.slice(1).map((workout, index) => (
+          <div key={index} className={styles.galleryImage}>
+            <Card
+              eventName={workout.eventName}
+              description={workout.description}
+              imageUrl={workout.imageUrl}
+              trainer={workout.trainer}
+              time={workout.time}
+              days={workout.days}
+              location={workout.location}
+              theme={workout.theme}
+            />
+          </div>
+        ))}
       </div>
-      <div className={styles.galleryImage}>
-        <Card
-          eventName="DragonFire Workout"
-          description="This is an example workout description."
-          imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          trainer="Jack"
-          time="5pm-7pm"
-          days="Mon, Wed, Fri"
-          location="Muir Fit Park"
-        />
-      </div><div className={styles.galleryImage}>
-        <Card
-          eventName="DragonFire Workout"
-          description="This is an example workout description."
-          imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          trainer="Jack"
-          time="5pm-7pm"
-          days="Mon, Wed, Fri"
-          location="Muir Fit Park"
-        />
-      </div>
-      <div className={styles.galleryImage}>
-        <Card
-          eventName="DragonFire Workout"
-          description="This is an example workout description."
-          imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          trainer="Jack"
-          time="5pm-7pm"
-          days="Mon, Wed, Fri"
-          location="Muir Fit Park"
-        />
-      </div>
-      <div className={styles.galleryImage}>
-        <Card
-          eventName="DragonFire Workout"
-          description="This is an example workout description."
-          imageUrl="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          trainer="Jack"
-          time="5pm-7pm"
-          days="Mon, Wed, Fri"
-          location="Muir Fit Park"
-        />
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default WorkoutSchedule;

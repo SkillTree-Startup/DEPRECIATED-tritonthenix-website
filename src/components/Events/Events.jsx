@@ -30,7 +30,7 @@ const Events = () => {
               imageUrl={events[0].imageUrl}
               trainer={events[0].trainer}
               time={events[0].time}
-              days={events[0].days}
+              date={events[0].date}
               location={events[0].location}
               theme={events[0].theme}
             />
@@ -52,7 +52,7 @@ const Events = () => {
               imageUrl={event.imageUrl}
               trainer={event.trainer}
               time={event.time}
-              days={event.days}
+              date={event.date}
               location={event.location}
               theme={event.theme}
             />

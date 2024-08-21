@@ -1,2 +1,12 @@
-eventName,description,imageUrl,trainer,time,days,location,theme
-"DragonFire Workout","This is an example workout description.","https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","Jack","5pm-7pm","Mon, Wed, Fri","Muir Fit Park","main event"
+eventName,description,imageUrl,trainer,time,date,location,theme
+RecFest,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,SJ,12-3pm,Mon 9-23,Muir Bar Park,main event
+GBM 1,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,Joseph,4-6pm,Fri 9-25,Muir Bar Park,event
+Beach Day,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,None,5-8pm,Fri 10-4,La Jolla Shores,event
+GBM 2,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,Joseph,4-6pm,Fri 10-18,Muir Bar Park,event
+Kickback,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,None,7-10pm,Sat 10-19,TBD,event
+Family Beach Day,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,None,7-10pm,Fri 10-25,Blacks Beach,event
+Costume Contest,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,Joseph,4-6pm,Sat 10-19,Muir Bar Park,event
+UCLA Bar Jam,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,UCLA,3-8pm,Sat 11-26,Santa Monica,event
+3 Tritons Competition,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,None,4-7pm,Sat 11-9,Muir Bar Park,event
+Field Day,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,None,3-6pm,Sat 11-23,Muir Field,event
+Formal Night,This is an example workout description.,https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,None,5-8pm,Wed 11-27,TBD,event

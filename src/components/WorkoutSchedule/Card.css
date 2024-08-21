@@ -36,7 +36,7 @@
 .time,
 .location {
   text-transform: uppercase;
-  font-size: 250%; /* Adjust based on your design */
+  font-size: 200%; /* Adjust based on your design */
   color: white;
   position: absolute; /* Position it absolutely within the card */
   top: 15%; /* Center it vertically */
@@ -73,10 +73,6 @@
 
 .location {
   top: 60%;
-}
-
-.event .days {
-  visibility: hidden;
 }
 
 .eventDetails {
@@ -179,16 +175,78 @@
   z-index: 1;
 } */
 
+/* Themes */
 .main svg {
   margin-top: 10%;
   width: 30%;
 }
 
+.event .days,
+.event .trainer {
+  visibility: hidden;
+}
+
+.workout .date {
+  visibility: hidden;
+}
+
+.workout .likeButton,
+.workout .dislikeButton,
+.workout .likeCounter,
+.workout .dislikeCounter {
+  visibility: hidden;
+}
+
+/* .workout .bookmarkButton {
+  position: relative;
+  top: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+} */
+
+/* .workout .bookmarkButton svg {
+  width: 90%;
+} */
+
+.workout .bookmarkCounter {
+  bottom: 48%;
+  color: white;
+  z-index: 1;
+}
+
+.workout .eventDetails {
+  height: 25%;
+}
+
+.workout .trainer {
+  top: 55%; /* Center it vertically */
+}
+
+.workout .days,
+.workout .date {
+  top: 60%;
+}
+
+.workout .time {
+  top: 65%;
+}
+
+.workout .location {
+  top: 70%;
+}
+
+/* Responsive screen changing */
 @media (max-width: 991px) {
   .main 
   .eventDetails {
     padding-bottom: 0%;
   }
+
+  /* .workout .bookmarkButton svg {
+    width: 100%;
+  } */
 }
 
 @media (max-width: 640px) {
