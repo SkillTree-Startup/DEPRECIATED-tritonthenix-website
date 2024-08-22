@@ -3,7 +3,7 @@ name: Deploy to ACSWeb using GitHub Actions
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:

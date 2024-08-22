@@ -1,0 +1,38 @@
+.background-tiles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .tiles-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .tile {
+    position: absolute;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+    opacity: 0.1;
+  }
+  
+  /* Gradient overlay to fade to black */
+  .background-tiles:before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Start fading halfway down */
+    left: 0;
+    width: 100%;
+    height: 50%; /* Fade to black for 50% of the viewport height */
+    background: linear-gradient(transparent, black);
+    pointer-events: none; /* Allows clicks to go through */
+    z-index: 1; /* Ensure it's above the tiles */
+  }
+  
