@@ -17,7 +17,7 @@ document.head.appendChild(link);
 function AppTest() {
   return (
     <div className="App">
-      <AnnouncementBanner announcement="This is an important announcement!" />
+      <AnnouncementBanner announcement="This is a test to upload the website!" />
       <Header />
       <main className="content">
         <WorkoutSchedule id="families" />
