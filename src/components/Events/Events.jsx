@@ -39,7 +39,7 @@ const Events = () => {
         <div className={styles.eventsContent}>
           <h2 className={styles.eventsTitle}>Events</h2>
           <p className={styles.eventsDescription}>
-            Description: Here is where we can write a description about how Saturday workouts are formatted and how they are run. We can talk about the purpose of the workouts as well as hype up the head trainer.
+            TritonThenix isn't just about fitness—it's about building lasting friendships and creating unforgettable memories. Our social events are designed to bring our community together outside of workouts, offering a chance to unwind, have fun, and connect with fellow members. From beach days and barbecues to themed parties and outdoor adventures, our events cater to a wide range of interests and are open to all members. These gatherings are the perfect opportunity to bond with your workout partners, celebrate achievements, and enjoy the camaraderie that makes TritonThenix more than just a fitness club. Whether you're new to the community or a seasoned member, our social events are a cornerstone of the TritonThenix experience, fostering a sense of belonging and making every moment at UCSD even more special.
           </p>
         </div>
       </div>

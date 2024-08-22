@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 36px; /* Gap between image and text */
-      text-align: right;
+      text-align: left;
   }
   
   .mainEventImage {
@@ -31,6 +31,7 @@
     font-size: 36px;
     margin-bottom: 10px;
     color: #fff;
+    text-align: right;
   }
 
   .eventsDescription {
@@ -73,6 +74,14 @@
       width: 48%;
       margin-bottom: 20px;
     }
+
+    .eventsTitle {
+      text-align: center;
+    }
+
+    .eventsDescription {
+      display: none;
+    }
   }
   
   @media (max-width: 640px) {
@@ -87,6 +96,14 @@
   
     .galleryImage {
         width: 100%;
+    }
+
+    .eventsTitle {
+      text-align: center;
+    }
+
+    .eventsDescription {
+      display: none;
     }
   }
   

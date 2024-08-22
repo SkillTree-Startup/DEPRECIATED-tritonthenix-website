@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MemberList.module.css';
+import { fetchMemberData } from './MemberData'; // Import the fetch function
 
-const members = [
-  { name: 'Alex Johnson', bio: 'Here members can write a short bio about their experiences', image: 'https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Faa380a88ce784cf595bbb7bb352e06eb' },
-  { name: 'Taylor Smith', bio: 'Here members can write a short bio about their experiences', image: 'https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Fd4a66864f0f1470da698014238fef995' },
-  { name: 'Riley Brown', bio: 'Here members can write a short bio about their experiences', image: 'https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Fe1262eb4b50e499d9d5e6bea90a771f9' },
-  { name: 'Jordan Davis', bio: 'Marketing Specialist', image: 'https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F3c50a0582c6c418abada5c25103249eb' },
-  { name: 'Test1 +4', bio: 'Marketing Specialist', image: 'https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F3c50a0582c6c418abada5c25103249eb' },
-  { name: 'Test2 +4', bio: 'Marketing Specialist', image: 'https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F3c50a0582c6c418abada5c25103249eb' },
-  { name: 'Test3 +4', bio: 'Marketing Specialist', image: 'https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F3c50a0582c6c418abada5c25103249eb' },
-];
-
+// Function to shuffle array elements
 const shuffleArray = (array) => {
   const shuffled = array.slice();
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -21,23 +13,52 @@ const shuffleArray = (array) => {
 };
 
 const MemberList = () => {
+  const [allMembers, setAllMembers] = useState([]);
   const [displayedMembers, setDisplayedMembers] = useState([]);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
+  // Load members and set initial state
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 640) {
-        setDisplayedMembers(shuffleArray(members).slice(0, 1));
-      } else if (window.innerWidth <= 991) {
-        setDisplayedMembers(shuffleArray(members).slice(0, 2));
-      } else {
-        setDisplayedMembers(shuffleArray(members).slice(0, 4)); // Adjusted to show only 4 cards at the largest size
+    const loadMembers = async () => {
+      try {
+        const memberData = await fetchMemberData();
+        const shuffledMembers = shuffleArray(memberData).map(member => ({
+          name: `${member['First Name']} ${member['Last Name']}`,
+          bio: `Major: ${member['Major']}, College: ${member['College']}`,
+          image: member['Upload a picture of yourself to be featured on our website!']
+        }));
+        setAllMembers(shuffledMembers);
+      } catch (error) {
+        console.error('Error loading member data:', error);
       }
     };
 
-    handleResize();
+    loadMembers();
+  }, []);
+
+  // Handle screen resizing and set the number of displayed members
+  useEffect(() => {
+    const updateDisplayedMembers = () => {
+      let numberOfMembers;
+      if (screenWidth <= 640) {
+        numberOfMembers = 1;  // Show 1 member on small screens
+      } else if (screenWidth <= 991) {
+        numberOfMembers = 2;  // Show 2 members on medium screens
+      } else {
+        numberOfMembers = 4;  // Show 4 members on large screens
+      }
+      setDisplayedMembers(allMembers.slice(0, numberOfMembers));
+    };
+
+    updateDisplayedMembers();
+
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [screenWidth, allMembers]);
 
   return (
     <section className={styles.memberList}>

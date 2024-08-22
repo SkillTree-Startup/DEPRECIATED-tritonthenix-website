@@ -72,6 +72,10 @@
     width: 48%;
     margin-bottom: 20px;
   }
+
+  .scheduleTitle {
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {
@@ -86,5 +90,13 @@
 
   .galleryImage {
     width: 100%;
+  }
+
+  .scheduleTitle {
+    text-align: center;
+  }
+
+  .scheduleDescription {
+    display: none;
   }
 }

@@ -39,8 +39,7 @@ const WorkoutSchedule = () => {
         <div className={styles.scheduleContent}>
           <h2 className={styles.scheduleTitle}>Workout Schedule</h2>
           <p className={styles.scheduleDescription}>
-            Description: Here is where we can write a description about how Saturday workouts are formatted and how they are run. We can talk about the purpose of the workouts as well as hype up the head trainer.
-          </p>
+            At TritonThenix, our workouts are more than just exercises—they’re a community-driven experience designed to challenge and inspire. Whether you're a beginner or an experienced athlete, our bodyweight training sessions are tailored to help you achieve your fitness goals. We focus on calisthenics, emphasizing strength, flexibility, and endurance through movements like pull-ups, push-ups, dips, and more. Each workout is led by knowledgeable trainers who ensure that every participant can progress at their own pace while pushing their limits. Our sessions are held in a supportive and energetic environment where you can improve your skills, build confidence, and connect with fellow members. Join us at TritonThenix to elevate your fitness and be part of a vibrant community that’s dedicated to bringing bodyweight fitness to the forefront.          </p>
         </div>
       </div>
       <div className={styles.imageGallery}>

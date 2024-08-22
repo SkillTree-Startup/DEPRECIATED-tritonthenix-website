@@ -7,7 +7,7 @@ import Background from '../Background/BackgroundTiles'
 
 const Layout = ({ children }) => (
   <div className={styles.layout}>
-    <AnnouncementBanner announcement="This is an important announcement!" />
+    <AnnouncementBanner announcement="⚠️❗FALL MERCH IS HERE❗⚠️ Message us @TritonThenix on instagram to get yours today!" />
     <Header />
     <main className={styles.mainContent}>
       {children}

@@ -42,12 +42,14 @@
   top: 15%; /* Center it vertically */
   left: 50%; /* Center it horizontally */
   transform: translate(-50%, -50%); /* Offset the centering */
-  text-align: left; /* Center the text itself */
+  text-align: center; /* Center the text itself */
   margin: 0; /* Remove any default margins */
   width: 90%; /* Adjust as necessary to fit within the card's padding */
   white-space: normal; /* Allow wrapping */
   word-break: break-word; /* Break long words */
   z-index: 2; /* Ensure it appears above the image */
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
 .trainer,
@@ -57,9 +59,11 @@
 .location {
   text-transform: none;
   font-size: 115%; /* Adjust based on your design */
-  color: #999;
+  color: #fff;
   top: 45%; /* Center it vertically */
   font-weight: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 .days,
@@ -237,11 +241,27 @@
   top: 70%;
 }
 
+.main .location {
+  top: 55%;
+}
+
+.main .trainer {
+  top: 50%;
+}
+
+.event .location {
+  top: 45%;
+}
+
 /* Responsive screen changing */
 @media (max-width: 991px) {
   .main 
   .eventDetails {
     padding-bottom: 0%;
+  }
+  
+  .main .trainer {
+    top: 55%;
   }
 
   /* .workout .bookmarkButton svg {
