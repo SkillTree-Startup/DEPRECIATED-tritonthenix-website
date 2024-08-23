@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import './Card.css';
 
-const Card = ({ imageUrl, eventName, description, time, days, date, location, other, theme, link, icsFile }) => {
+const Card = ({ imageUrl, eventName, description, time, days, date, location, other, theme, link, calendar }) => {
   const [cookies, setCookie] = useCookies(['bookmarkedEvents']);
   const [bookmarked, setBookmarked] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -28,11 +28,8 @@ const Card = ({ imageUrl, eventName, description, time, days, date, location, ot
     }, { path: '/' });
 
     if (newBookmarked) {
-      // Trigger the download if it's not already bookmarked
-      const linkElement = document.createElement('a');
-      linkElement.href = icsFile;
-      linkElement.download = `${eventName.replace(/\s+/g, '_')}.ics`;
-      linkElement.click();
+      // Open the new calendar link in a new tab
+      window.open(calendar, '_blank');
     }
   };
 

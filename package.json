@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "generate-image-list": "node scripts/generateImageList.js",
     "generate-ICS-files": "node scripts/generateICS.js",
-    "build": "npm run generate-image-list && react-scripts build && generateICS.js"
+    "build": "npm run generate-image-list && react-scripts build"
   },
   "eslintConfig": {
     "extends": [

@@ -19,6 +19,12 @@ const Events = () => {
     loadEventsData();
   }, []);
 
+  // Function to generate the Google Form link
+  const generateEventLink = (eventName) => {
+    const baseGoogleFormLink = "https://docs.google.com/forms/d/e/1FAIpQLSd58IUJbk6wyxfeBl3k4zwesKz41_f8sbEhwmcGETF44wiO8A/formResponse?entry.1035634596=";
+    return `${baseGoogleFormLink}${encodeURIComponent(eventName)}&submit=Submit`;
+  };
+
   return (
     <section className={styles.events}>
       <div className={styles.eventsTop}>
@@ -33,7 +39,8 @@ const Events = () => {
               location={events[0].location}
               other={events[0].other}
               theme={events[0].theme}
-              link={events[0].link}
+              link={generateEventLink(events[0].eventName)} // Dynamically set the link
+              calendar={events[0].calendar}
             />
           </div>
         )}
@@ -56,7 +63,8 @@ const Events = () => {
               location={event.location}
               theme={event.theme}
               other={event.other}
-              link={event.link}
+              link={generateEventLink(event.eventName)} // Dynamically set the link
+              calendar={event.calendar}
             />
           </div>
         ))}
