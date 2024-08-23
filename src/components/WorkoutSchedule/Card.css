@@ -29,54 +29,46 @@
   opacity: 0.8;
 }
 
-.eventName,
-.trainer,
-.days,
-.date,
-.time,
-.location {
-  text-transform: uppercase;
-  font-size: 200%; /* Adjust based on your design */
+.eventHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  position: absolute; /* Position it absolutely within the card */
-  top: 15%; /* Center it vertically */
-  left: 50%; /* Center it horizontally */
-  transform: translate(-50%, -50%); /* Offset the centering */
-  text-align: center; /* Center the text itself */
-  margin: 0; /* Remove any default margins */
-  width: 90%; /* Adjust as necessary to fit within the card's padding */
-  white-space: normal; /* Allow wrapping */
-  word-break: break-word; /* Break long words */
-  z-index: 2; /* Ensure it appears above the image */
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.trainer,
-.days,
-.date,
-.time,
-.location {
-  text-transform: none;
-  font-size: 115%; /* Adjust based on your design */
-  color: #fff;
-  top: 45%; /* Center it vertically */
-  font-weight: 100;
-  background-color: rgba(0, 0, 0, 0.5);
-  text-align: center;
+.eventName {
+  margin: 0;
+  font-size: 4vh; /* Inherits the font size from the container */
+  max-width: 85%; /* Adjust to ensure there's space for the button */
+}
+.bookmarkButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.days,
-.date {
-  top: 50%;
+.bookmarkButton svg {
+  fill: rgba(255, 255, 255, 0.6);
+  transition: fill 0.1s;
+  width: 7vh; /* Adjust size as needed */
+  height: 7vh; /* Adjust size as needed */
 }
 
-.time {
-  top: 55%;
+.bookmarkButton:hover svg {
+  fill: rgba(255, 255, 255, 0.8); /* Change opacity on hover */
 }
 
-.location {
-  top: 60%;
+.bookmarkButton.bookmarked svg {
+  fill: gold; /* Yellow when bookmarked */
 }
 
 .eventDetails {
@@ -84,235 +76,95 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 35%;
-  padding: 10px;
+  padding: 2% 5%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-sizing: border-box;
-  padding-bottom: 20%;
+  color: black;
+  text-align: left;
+  font-size: 2vh;
+  height: auto; /* Make the height auto to adjust based on content */
+  min-height: 20%; /* Ensure it has a minimum height */
+  transition: opacity 0.3s, transform 0.3s;
 }
 
-.details {
+.descriptionContainer {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap; /* Allow content to wrap to a new row */
   width: 100%;
 }
 
-.info {
-  display: flex;
-  flex-direction: column;
+.descriptionContainer h2 {
+  margin: 5px 5px 5px 5px; /* Adjust spacing between details */
+  font-size: inherit; /* Keep font size consistent */
+  white-space: normal; /* Allow text to wrap */
+  overflow: visible; /* Make sure content is visible */
+  background-color: #ccc;
+  padding: 0px 15px;
+  border-radius: 10px;
+  flex: 1 1 auto; /* Allow the h2 elements to grow and shrink */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  min-width: 10px; /* Set a minimum width to prevent too much shrinking */
+  text-align: center;
 }
 
-.smallText {
-  font-size: 0.8em;
-  margin: 2px 0;
+.event .days{
+  display: none;
 }
 
-.iconContainer {
-  display: flex;
+.workout .date{
+  display: none;
 }
 
-.iconWrapper {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.likeCounter,
-.dislikeCounter,
-.bookmarkCounter {
-  font-size: 1.5rem;
-  color: white;
-  position: relative;
-  bottom: 5%;
-}
-
-.likeButton,
-.dislikeButton,
-.bookmarkButton {
-  background: none; /* Ensure the button itself has no background */
-  border: none; /* Ensure the button has no border */
-  padding: 0; /* Remove any default padding */
-  cursor: pointer;
-}
-
-.likeButton svg,
-.dislikeButton svg,
-.bookmarkButton svg {
-  width: 50%;
-  height: 100%;
-  fill: rgba(255, 255, 255, 0.6);
-  transition: fill 0.1s;
-  margin-top: 10px;
-}
-
-.likeButton:hover svg,
-.dislikeButton:hover svg,
-.bookmarkButton:hover svg {
-  opacity: 0.8; /* Change opacity on hover */
-}
-
-.likeButton.liked svg {
-  fill: #2ecc71; /* Green when liked */
-}
-
-.dislikeButton.disliked svg {
-  fill: #e74c3c; /* Red when disliked */
-}
-
-.bookmarkButton.bookmarked svg {
-  fill: gold; /* Yellow when bookmarked */
-}
-
-/* .bookmarkButton {
+.summaryContainer {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2% 5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-sizing: border-box;
+  color: black;
+  text-align: left;
+  font-size: 2vh;
+  height: auto; /* Make the height auto to adjust based on content */
+  min-height: 70%; /* Ensure it has a minimum height */
   z-index: 1;
-} */
-
-/* Themes */
-.main svg {
-  margin-top: 10%;
-  width: 30%;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.event .days,
-.event .trainer {
-  visibility: hidden;
-}
-
-.workout .date {
-  visibility: hidden;
-}
-
-.workout .likeButton,
-.workout .dislikeButton,
-.workout .likeCounter,
-.workout .dislikeCounter {
-  visibility: hidden;
-}
-
-/* .workout .bookmarkButton {
-  position: relative;
-  top: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1;
-} */
-
-/* .workout .bookmarkButton svg {
-  width: 90%;
-} */
-
-.workout .bookmarkCounter {
-  bottom: 48%;
+.summaryDescription {
+  margin: 5px 5px 5px 5px; /* Adjust spacing between details */
+  font-size: inherit; /* Keep font size consistent */
+  white-space: normal; /* Allow text to wrap */
+  overflow: visible; /* Make sure content is visible */
   color: white;
-  z-index: 1;
+  box-sizing: border-box; /* Include padding in the width calculation */
+  min-width: 10px; /* Set a minimum width to prevent too much shrinking */
+  text-align: left;
 }
 
-.workout .eventDetails {
-  height: 25%;
+.workoutCard:hover .eventDetails {
+  opacity: 0;
+  transform: translateY(100%);
 }
 
-.workout .trainer {
-  top: 55%; /* Center it vertically */
-}
-
-.workout .days,
-.workout .date {
-  top: 60%;
-}
-
-.workout .time {
-  top: 65%;
-}
-
-.workout .location {
-  top: 70%;
-}
-
-.main .location {
-  top: 55%;
-}
-
-.main .trainer {
-  top: 50%;
-}
-
-.event .location {
-  top: 45%;
-}
-
-/* Responsive screen changing */
-@media (max-width: 991px) {
-  .main 
-  .eventDetails {
-    padding-bottom: 0%;
-  }
-  
-  .main .trainer {
-    top: 50%;
-  }
-
-  /* .workout .bookmarkButton svg {
-    width: 100%;
-  } */
-}
-
-@media (max-width: 640px) {
-  .main svg {
-    margin-top: 10%;
-    width: 50%;
-  }
-
-  .main .trainer {
-    top: 50%;
-  }
-}
-
-@media (max-width: 320px) {
-  .main svg {
-    margin-top: 10%;
-    width: 50%;
-  }
-
-  .main .trainer {
-    top: 50%;
-  }
-
-  .likeButton svg,
-  .dislikeButton svg,
-  .bookmarkButton svg {
-    width: 45%;
-  }
-
-  .likeCounter,
-  .dislikeCounter,
-  .bookmarkCounter{
-    position: relative;
-    bottom: 15%;
-  }
-
-  .trainer,
-  .days,
-  .date,
-  .time,
-  .location {
-    font-size: 90%;
-  }
-
-  .eventName {
-    font-size: 175%;
-  }
-
+.workoutCard:hover .summaryContainer {
+  transform: translateY(0);
+  opacity: 1;
 }

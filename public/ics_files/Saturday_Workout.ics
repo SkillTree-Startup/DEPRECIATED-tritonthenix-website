@@ -1,0 +1,12 @@
+
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your Organization//NONSGML v1.0//EN
+BEGIN:VEVENT
+SUMMARY:Saturday Workout
+DESCRIPTION:Here is an exmaple of a longer description for an event. I am trying to figure out how many words I have untill the workout card is broken. For now things are looking good. I might still have to look into moving the text up since right now it is in the middle of the card and it looks weird.
+DTSTART:20240823T102525Z
+DTEND:20240823T122525Z
+LOCATION:Muir Bar Park
+END:VEVENT
+END:VCALENDAR

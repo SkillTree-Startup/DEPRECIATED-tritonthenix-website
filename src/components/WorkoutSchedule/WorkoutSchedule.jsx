@@ -28,11 +28,12 @@ const WorkoutSchedule = () => {
               eventName={workouts[0].eventName}
               description={workouts[0].description}
               imageUrl={workouts[0].imageUrl}
-              trainer={workouts[0].trainer}
               time={workouts[0].time}
               days={workouts[0].days}
               location={workouts[0].location}
+              other={workouts[0].other}
               theme={workouts[0].theme}
+              link={workouts[0].link}
             />
           </div>
         )}
@@ -49,11 +50,12 @@ const WorkoutSchedule = () => {
               eventName={workout.eventName}
               description={workout.description}
               imageUrl={workout.imageUrl}
-              trainer={workout.trainer}
               time={workout.time}
               days={workout.days}
               location={workout.location}
+              other={workout.other}
               theme={workout.theme}
+              link={workout.link}
             />
           </div>
         ))}

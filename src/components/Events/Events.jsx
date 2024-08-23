@@ -28,11 +28,12 @@ const Events = () => {
               eventName={events[0].eventName}
               description={events[0].description}
               imageUrl={events[0].imageUrl}
-              trainer={events[0].trainer}
               time={events[0].time}
               date={events[0].date}
               location={events[0].location}
+              other={events[0].other}
               theme={events[0].theme}
+              link={events[0].link}
             />
           </div>
         )}
@@ -50,11 +51,12 @@ const Events = () => {
               eventName={event.eventName}
               description={event.description}
               imageUrl={event.imageUrl}
-              trainer={event.trainer}
               time={event.time}
               date={event.date}
               location={event.location}
               theme={event.theme}
+              other={event.other}
+              link={event.link}
             />
           </div>
         ))}
