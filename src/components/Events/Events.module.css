@@ -37,6 +37,7 @@
   .eventsDescription {
     font-size: 16px;
     color: #888;
+    text-align: right;
   }
 
   .eventGallery {

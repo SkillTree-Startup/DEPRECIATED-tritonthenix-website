@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MemberList.module.css';
 import { fetchMemberData } from './MemberData'; // Import the fetch function
+import imageList from './imageList.json'; // Import the JSON file with image names
 
 // Function to shuffle array elements
 const shuffleArray = (array) => {
@@ -10,6 +11,32 @@ const shuffleArray = (array) => {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   return shuffled;
+};
+
+// Function to get image path based on member name
+const getImagePath = (firstName, lastName) => {
+  const namePattern = `${firstName.trim()} ${lastName.trim()}`.toLowerCase();
+  console.log(`Searching for images for: ${namePattern}`);
+
+  // Find an image file that matches the name pattern
+  const foundFile = imageList.find(fileName => 
+    fileName.toLowerCase().includes(namePattern)
+  );
+
+  if (foundFile) {
+    try {
+      // Import the image dynamically
+      const imagePath = require(`../../assets/memberImages/${foundFile}`);
+      console.log(`Found image: ${imagePath}`);
+      return imagePath;
+    } catch (error) {
+      console.error(`Error loading image: ${foundFile}`, error);
+    }
+  }
+
+  // If no image is found, return a placeholder
+  console.log('No matching image found. Using default image.');
+  return require('../../assets/memberImages/Profile_avatar_placeholder_large.png');
 };
 
 const MemberList = () => {
@@ -22,11 +49,13 @@ const MemberList = () => {
     const loadMembers = async () => {
       try {
         const memberData = await fetchMemberData();
+
         const shuffledMembers = shuffleArray(memberData).map(member => ({
           name: `${member['First Name']} ${member['Last Name']}`,
           bio: `Major: ${member['Major']}, College: ${member['College']}`,
-          image: member['Upload a picture of yourself to be featured on our website!']
+          image: getImagePath(member['First Name'], member['Last Name']) // Use the updated function
         }));
+
         setAllMembers(shuffledMembers);
       } catch (error) {
         console.error('Error loading member data:', error);

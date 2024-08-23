@@ -261,7 +261,7 @@
   }
   
   .main .trainer {
-    top: 55%;
+    top: 50%;
   }
 
   /* .workout .bookmarkButton svg {
@@ -274,4 +274,45 @@
     margin-top: 10%;
     width: 50%;
   }
+
+  .main .trainer {
+    top: 50%;
+  }
+}
+
+@media (max-width: 320px) {
+  .main svg {
+    margin-top: 10%;
+    width: 50%;
+  }
+
+  .main .trainer {
+    top: 50%;
+  }
+
+  .likeButton svg,
+  .dislikeButton svg,
+  .bookmarkButton svg {
+    width: 45%;
+  }
+
+  .likeCounter,
+  .dislikeCounter,
+  .bookmarkCounter{
+    position: relative;
+    bottom: 15%;
+  }
+
+  .trainer,
+  .days,
+  .date,
+  .time,
+  .location {
+    font-size: 90%;
+  }
+
+  .eventName {
+    font-size: 175%;
+  }
+
 }
