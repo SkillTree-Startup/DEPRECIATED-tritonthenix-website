@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 import styles from './Hero.module.css';
 
-//images
+// Images
 import freestyle from '../../assets/images/IMG_9353.jpeg';
 import stretch from '../../assets/images/stretch.jpg';
 import pushup from '../../assets/images/pushup2.jpg';
@@ -18,9 +19,33 @@ const getRandomImage = () => {
   return images[randomIndex];
 };
 
-const Hero = ({ body, buttonText }) => {
+const Hero = ({ body, buttonText, onBingoClick }) => {
+  const [cookies, setCookie] = useCookies(['buttonClicked', 'bingoCompleted']);
+  const [buttonLabel, setButtonLabel] = useState(buttonText);
+  const [buttonLink, setButtonLink] = useState("https://forms.gle/bV2UhPJ5idsXzSMy9");
+
+  useEffect(() => {
+    if (cookies.bingoCompleted) {
+      setButtonLabel(null); // Hide the button
+    } else if (cookies.buttonClicked) {
+      setButtonLabel("BINGO");
+    } else {
+      setButtonLabel(buttonText);
+      setButtonLink("https://forms.gle/bV2UhPJ5idsXzSMy9"); // Set the button link for the first click
+    }
+  }, [cookies.bingoCompleted, cookies.buttonClicked, buttonText]);
+
   const handleButtonClick = () => {
-    window.location.href = "https://forms.gle/bV2UhPJ5idsXzSMy9";
+    if (!cookies.buttonClicked) {
+      setCookie('buttonClicked', 'true', { path: '/' });
+      setButtonLabel("BINGO");
+      setButtonLink("https://forms.gle/bV2UhPJ5idsXzSMy9"); // Ensure this link is used on the first click
+      window.open(buttonLink, '_blank'); // Open the link in a new tab
+    } else if (buttonLabel === "BINGO") {
+      setCookie('bingoCompleted', 'true', { path: '/' }); // Set bingoCompleted cookie to true
+      onBingoClick(); // Trigger the replacement of the Hero component with the Bingo component
+      setButtonLabel(null); // Hide the button immediately after bingo is completed
+    }
   };
 
   return (
@@ -30,7 +55,11 @@ const Hero = ({ body, buttonText }) => {
       <div className={styles.heroContent}>
         <img src={logo} alt="Logo" className={styles.logo} />
         <p className={styles.heroBody}>{body}</p>
-        <button className={styles.heroButton} onClick={handleButtonClick}>{buttonText}</button>
+        {buttonLabel && (
+          <button className={styles.heroButton} onClick={handleButtonClick}>
+            {buttonLabel}
+          </button>
+        )}
       </div>
     </section>
   );

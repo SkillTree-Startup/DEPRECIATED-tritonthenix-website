@@ -38,7 +38,7 @@ const Events = () => {
               date={events[0].date}
               location={events[0].location}
               other={events[0].other}
-              theme={events[0].theme}
+              theme="event"
               link={generateEventLink(events[0].eventName)} // Dynamically set the link
               calendar={events[0].calendar}
             />
@@ -61,7 +61,7 @@ const Events = () => {
               time={event.time}
               date={event.date}
               location={event.location}
-              theme={event.theme}
+              theme="event"
               other={event.other}
               link={generateEventLink(event.eventName)} // Dynamically set the link
               calendar={event.calendar}

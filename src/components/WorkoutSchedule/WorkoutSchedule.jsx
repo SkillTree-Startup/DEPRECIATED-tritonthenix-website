@@ -32,7 +32,7 @@ const WorkoutSchedule = () => {
               days={workouts[0].days}
               location={workouts[0].location}
               other={workouts[0].other}
-              theme={workouts[0].theme}
+              theme="workout"
               link={workouts[0].link}
               calendar={workouts[0].calendar}
             />
@@ -55,7 +55,7 @@ const WorkoutSchedule = () => {
               days={workout.days}
               location={workout.location}
               other={workout.other}
-              theme={workout.theme}
+              theme="workout"
               link={workout.link}
               calendar={workout.calendar}
             />
