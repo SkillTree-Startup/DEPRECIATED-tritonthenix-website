@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.7",
     "csv-parser": "^3.0.0",
     "csv-writer": "^1.6.0",
     "papaparse": "^5.4.1",
@@ -25,7 +26,8 @@
     "eject": "react-scripts eject",
     "generate-image-list": "node scripts/generateImageList.js",
     "generate-ICS-files": "node scripts/generateICS.js",
-    "build": "npm run generate-image-list && react-scripts build"
+    "download-Event-Images-CSV": "node scripts/downloadImagesFromCSV.js",
+    "build": "npm run generate-image-list && react-scripts build && download-Event-Images-CSV"
   },
   "eslintConfig": {
     "extends": [

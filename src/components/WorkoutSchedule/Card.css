@@ -29,6 +29,13 @@
   opacity: 0.8;
 }
 
+.main .workoutImage {
+  aspect-ratio: 4 / 2.7; /* Example for a 4:3 aspect ratio */
+  display: block;
+}
+
+
+
 .eventHeader {
   display: flex;
   align-items: center;

@@ -33,12 +33,12 @@ const Events = () => {
             <Card
               eventName={events[0].eventName}
               description={events[0].description}
-              imageUrl={events[0].imageUrl}
+              imageUrl={events[0].imageUrl} // Use updated imageUrl
               time={events[0].time}
               date={events[0].date}
               location={events[0].location}
               other={events[0].other}
-              theme="event"
+              theme="main event"
               link={generateEventLink(events[0].eventName)} // Dynamically set the link
               calendar={events[0].calendar}
             />
@@ -57,7 +57,7 @@ const Events = () => {
             <Card
               eventName={event.eventName}
               description={event.description}
-              imageUrl={event.imageUrl}
+              imageUrl={event.imageUrl} // Use updated imageUrl
               time={event.time}
               date={event.date}
               location={event.location}

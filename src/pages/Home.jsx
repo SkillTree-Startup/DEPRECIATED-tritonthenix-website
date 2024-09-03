@@ -33,7 +33,7 @@ const Home = () => {
           tasks={[
             'Attend a Saturday Workout', 'Come visit us during Tabeling', 'Attend a Social Event',
             'Meet all the Officers', 'Fill out our Interest Form', 'Follow TritonThenix on Instagram',
-            'Invite a Friend to a Workout', 'Meet all the Bigs', 'Attend a Mini-Meet'
+            'Invite a Friend to a Workout', 'Download the Hevy app', 'Attend a Mini-Meet'
           ]}
           onComplete={handleBingoComplete} // Handle completion and return to Hero
         />
