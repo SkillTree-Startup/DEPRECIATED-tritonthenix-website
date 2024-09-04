@@ -27,7 +27,7 @@
     "generate-image-list": "node scripts/generateImageList.js",
     "generate-ICS-files": "node scripts/generateICS.js",
     "download-Event-Images-CSV": "node scripts/downloadImagesFromCSV.js",
-    "build": "npm run generate-image-list && react-scripts build && download-Event-Images-CSV"
+    "build": "npm run generate-image-list && npm run download-Event-Images-CSV && react-scripts build"
   },
   "eslintConfig": {
     "extends": [

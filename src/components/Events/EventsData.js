@@ -8,6 +8,7 @@ export const fetchEventsData = async () => {
       complete: (results) => {
         // Function to extract the file ID from a Google Drive URL
         const extractFileId = (url) => {
+          if (!url) return null;  // Add a check to handle undefined or empty URLs
           const regex = /id=([^&]+)/;
           const match = url.match(regex);
           return match ? match[1] : null;

@@ -55,11 +55,11 @@ const Home = () => {
       <section id="workouts">
         <WorkoutSchedule />
       </section>
-      <section id="members">
-        <MemberList />
-      </section>
       <section id="events">
         <Events />
+      </section>
+      <section id="members">
+        <MemberList />
       </section>
       <section id="contact">
       </section>
