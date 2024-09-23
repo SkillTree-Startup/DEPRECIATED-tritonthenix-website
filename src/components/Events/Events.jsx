@@ -22,9 +22,9 @@ const Events = () => {
   // Function to generate the Google Form link
   const generateEventLink = (eventName) => {
     const baseGoogleFormLink = "https://docs.google.com/forms/d/e/1FAIpQLSd58IUJbk6wyxfeBl3k4zwesKz41_f8sbEhwmcGETF44wiO8A/formResponse?entry.1035634596=";
-    return `${baseGoogleFormLink}${encodeURIComponent(eventName)}&submit=Submit`;
+    return `${baseGoogleFormLink}${encodeURIComponent(eventName)}&entry.928333780=This+event+does+not+require+RSVP&submit=Submit`;
   };
-
+    
   return (
     <section className={styles.events}>
       <div className={styles.eventsTop}>
