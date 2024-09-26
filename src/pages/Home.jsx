@@ -58,9 +58,9 @@ const Home = () => {
       <section id="events">
         <Events />
       </section>
-      {/* <section id="members">
+      <section id="members">
         <MemberList />
-      </section> */}
+      </section>
       <section id="contact">
       </section>
     </Layout>
