@@ -1,8 +1,8 @@
-# TritonThenix Website 💪
+# TritonThenix Website
 
 A dynamic React-based website for UC San Diego's premier calisthenics and fitness community. This platform serves as a hub for event management, and community engagement.
 
-## 🌟 Features
+## Features
 
 - **Interactive Workout Schedule**: 
   - Dynamic calendar integration
@@ -21,7 +21,7 @@ A dynamic React-based website for UC San Diego's premier calisthenics and fitnes
 - **Social Integration**:
   - Member profile showcase
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18
 - **Routing**: React Router v6
@@ -38,7 +38,7 @@ A dynamic React-based website for UC San Diego's premier calisthenics and fitnes
   - ICS file creation
   - CSV data processing
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Clone the Repository**
    ```bash
@@ -57,7 +57,7 @@ A dynamic React-based website for UC San Diego's premier calisthenics and fitnes
    ```
    Visit [http://localhost:3000](http://localhost:3000)
 
-## 📱 Development Scripts
+## Development Scripts
 
 - `npm start`: Development server
 - `npm run build`: Production build
@@ -65,7 +65,7 @@ A dynamic React-based website for UC San Diego's premier calisthenics and fitnes
 - `npm run generate-ICS-files`: Create calendar files
 - `npm run download-Event-Images-CSV`: Process event images
 
-## 🔄 Automated Workflows
+## Automated Workflows
 
 The project includes several automation scripts:
 - Automatic image list generation
@@ -73,7 +73,7 @@ The project includes several automation scripts:
 - CSV data processing for events and workouts
 - GitHub Pages deployment pipeline
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
