@@ -86,6 +86,6 @@ src/
 └── ...           # Configuration files
 ```
 
-## 📝 License
+## License
 
 This project is private and maintained by TritonThenix at UC San Diego.
