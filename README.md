@@ -1,79 +1,91 @@
-# TritonThenix
-TritonThenix Website
+# TritonThenix Website 💪
 
-## Things do add by the end of Spring Break
-1. Home page with instagram uploads
-2. Officers page
-3. Bingo card page
-4. Family Tab
+A dynamic React-based website for UC San Diego's premier calisthenics and fitness community. This platform serves as a hub for event management, and community engagement.
 
-# Getting Started with Create React App
+## 🌟 Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- **Interactive Workout Schedule**: 
+  - Dynamic calendar integration
+  - Progress visualization
+  
+- **Event Management**:
+  - Automated ICS file generation
+  - Real-time event updates
+  - RSVP functionality
+  
+- **Community Features**:
+  - Member profiles and achievements
+  - Family system for workout groups
+  - Interactive bingo card challenges
+  
+- **Social Integration**:
+  - Member profile showcase
 
-## Available Scripts
+## 🛠️ Tech Stack
 
-In the project directory, you can run:
+- **Frontend**: React 18
+- **Routing**: React Router v6
+- **Data Handling**: 
+  - PapaParse for CSV processing
+  - Axios for API requests
+  - Local Storage for persistence
+- **UI/UX**: 
+  - Custom CSS modules
+  - FontAwesome icons
+  - Responsive design
+- **Automation**: Custom Node.js scripts for:
+  - Image list generation
+  - ICS file creation
+  - CSV data processing
 
-### `npm start`
+## 🚀 Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/DEPRECIATED-tritonthenix-website.git
+   cd DEPRECIATED-tritonthenix-website
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-### `npm test`
+3. **Run Development Server**
+   ```bash
+   npm start
+   ```
+   Visit [http://localhost:3000](http://localhost:3000)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📱 Development Scripts
 
-### `npm run build`
+- `npm start`: Development server
+- `npm run build`: Production build
+- `npm run generate-image-list`: Update image assets
+- `npm run generate-ICS-files`: Create calendar files
+- `npm run download-Event-Images-CSV`: Process event images
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔄 Automated Workflows
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The project includes several automation scripts:
+- Automatic image list generation
+- Event calendar file creation
+- CSV data processing for events and workouts
+- GitHub Pages deployment pipeline
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🏗️ Project Structure
 
-### `npm run eject`
+```
+src/
+├── components/     # React components
+│   ├── Events/    # Event management
+│   ├── Workouts/  # Workout tracking
+│   └── Members/   # Member profiles
+├── scripts/       # Automation scripts
+├── public/        # Static assets
+└── ...           # Configuration files
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📝 License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is private and maintained by TritonThenix at UC San Diego.
